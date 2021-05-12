@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <main>
+
+        <!-- Hero Area Start-->
+        <div class="slider-area hero-overly">
+            <div class="single-slider hero-overly  slider-height d-flex align-items-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-8 col-lg-9">
+                            <!-- Hero Caption -->
+                            <div class="hero__caption">
+                                <span>Explore the turf</span>
+                                <h1>Discover Great Places</h1>
+                            </div>
+                            <!--Hero form -->
+
+                            <form class="search-box" method="post" action="{{ url_for('search') }}">
+
+                               <div  class="select-form"style="width:338px;    border:#fff0;    border-color:#fff0;  line-height: 42px; position:relative;  color: #f8f9fa; background-color:#fff0;">
+
+                                    <div style="font-family:'Courier New'" class="select-itms"   placeholder='Enter location'>
+                                        <select name="location" id="select1" >
+
+                                            <option>location</option>
+                                            <option value="kannur">kannur</option>
+                                            <option value="kozhikode">kozhikode</option>
+                                            <option value="ernakulam">ernakulam</option>
+                                            <option value="trivandrum">trivandrum</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="select-form"  >
+                                    <div style="font-family:'Courier New'" class="select-itms" >
+                                        <select name="category" id="select1"   >
+                                            <option value="">All Catagories</option>
+                                            <option value="cricket">cricket turf</option>
+                                            <option value="football">football turf</option>
+                                            <option value="badminton">badminton turf</option>
+
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div style="font-family:'Courier New'" class="search-form">
+
+                                    <a  role="button" ><button style="background-color:#eee0; background-color:#fff0; border:none; color:white; width: 130px; height: 30px; " type="submit" >Search</button></a>
+
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--Hero Area End-->
+
+            </div>
+        </div>
+
+        <!-- Categories Area Start -->
+        <div class="categories-area section-padding30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle text-center mb-80">
+
+
+         <!-- peoples-visit Start -->
+         <div class="peoples-visit dining-padding-top">
+            <!-- Single Left img -->
+            <div class="single-visit left-img">
+                <div class="container">
+                    <div class="row justify-content-end">
+                        <div class="col-lg-8">
+                            <div class="visit-caption">
+                                <span>We are offering for you</span>
+                                <h3>Every Month, Millions of People
+                                    visit this site We’ve Built.</h3>
+                                <p>Playing a game together actually builds up bonds and trust and cooperation. We actually build stronger social relationships as a result.</p>
+                                <!--Single Visit categories -->
+                                <div class="visit-categories mb-40">
+                                    <div class="visit-location">
+                                        <span class="flaticon-travel"></span>
+                                    </div>
+                                    <div class="visit-cap">
+                                        <h4>Great places in the world</h4>
+                                        <p>Our brains are built to benefit from play no matter what our age.
+                                        </p>
+                                    </div>
+                                </div>
+                                <!--Single Visit categories -->
+                                <div class="visit-categories">
+                                    <div class="visit-location">
+                                        <span class="flaticon-work"></span>
+                                    </div>
+                                    <div class="visit-cap">
+                                        <h4>Biggest category listing</h4>
+                                        <p>It is a happy talent to know how to play.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- peoples-visit End -->
+
+
+    </main>
+ {% endblock %}

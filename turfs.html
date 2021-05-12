@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+
+    <main>
+
+        <!-- Hero Start-->
+        <div class="hero-area3 hero-overly2 d-flex align-items-center ">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-8 col-lg-9">
+
+                        <div class="hero-cap text-center pt-50 pb-20">
+
+                            <h2 style="font-family:'Courier New'" >Our  Turfs</h2>
+
+                        </div>
+
+                        <!--Hero form -->
+                        <form action="#" class="search-box search-box2">
+                            <div style="font-family:'Courier New'"  class="input-form">
+                                <input type="text" placeholder="What are you looking for?">
+                            </div>
+                            <div style="font-family:'Courier New'"  class="select-form">
+                                <div class="select-itms">
+                                    <select name="select" id="select1">
+                                        <option value="">All Catagories</option>
+                                        <option value="">Cricket Turf</option>
+                                        <option value="">Football Turf</option>
+                                        <option value="">Badminton  Turf</option>
+                                        <option value="">All turfs</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Search box -->
+                            <div style="font-family:'Courier New'"  class="search-form">
+                                <a href="#">Search</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Hero End -->
+
+        <!-- listing Area Start -->
+
+        <div class="listing-area pt-120 pb-120">
+            <div class="container">
+                <div class="row">
+
+                    </div>
+                    <!-- Right content -->
+                    <div class="col-xl-8 col-lg-8 col-md-6">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="count mb-35">
+                                    <h2 style="font-family:'Courier New'" >All  Turfs</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- listing Details Stat-->
+                        <div class="listing-details-area">
+                            <div class="container">
+                                <div class="row">
+ {% for turf in turf %}
+                                    <div class="col-lg-6 ">
+                                        <div class="single-listing mb-30">
+                                            <div class="list-img">
+                                                <img src="{{ url_for('static', filename='turfphotos/'+turf.photo)}}" alt="" width="1" height="250">
+                                                <!-- <span>Open</span> -->
+                                            </div>
+
+                                            <div class="list-caption">
+                                                <span style="font-family:'Courier New'" ><a href="{{ url_for('booking', turf_id=turf.id) }}">Book Now</a></span>
+                                                <h3 style="font-family:'Courier New'" ><a href="{{ url_for('profile',turfid=turf.id) }}">{{turf.companyname}}</a></h3>
+
+                                                 <h3 style="font-family:'Courier New'" >{{turf.price}}</h3>
+                                                 <div class="list-footer">
+                                                    <ul>
+                                                 <li style="font-family:'Courier New'" >{{turf.address}}</li>
+                                                         </div>
+                                                <div style="font-family:'Courier New'"  class="list-footer">
+                                                    <ul>
+                                                        <li>{{turf.phone}}</li>
+                                                        <li>{{turf.email}}</li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                 {% endfor %}
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- listing Details End -->
+                        <!--Pagination Start  -->
+                        <div class="pagination-area pt-70 text-center">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="single-wrap d-flex justify-content-center">
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="pagination justify-content-start">
+                                                    <li class="page-item active"><a class="page-link" href="#">01</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">02</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">03</a></li>
+                                                <li class="page-item"><a class="page-link" href="#"><span class="ti-angle-right"></span></a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Pagination End  -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- listing-area Area End -->
+
+    </main>
+  </html>
+
+ {% endblock %}

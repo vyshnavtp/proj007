@@ -1,0 +1,209 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Spotic </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="manifest" href="site.webmanifest">
+		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+		<!-- CSS here -->
+            <link rel="stylesheet" href="ism/css/my-slider.css">
+            <script src="{{ url_for('static', filename='asset/ism/js/ism-2.2.min.js')}}"></script>
+            <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bootstrap.min.css')}}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/owl.carousel.min.css')}}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/slicknav.css')}}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/flaticon.css')}}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/animate.min.css')}}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/magnific-popup.css')}}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/fontawesome-all.min.css')}}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/themify-icons.css')}}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/slick.css')}}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/nice-select.css')}}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css')}}">
+   </head>
+
+   <body>
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="{{ url_for('static', filename='assets/img/logo/mydes1.png')}}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+       <div class="header-area header-transparent border-0">
+            <div class="main-header">
+               <div class="header-bottom  header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-2 col-lg-2 col-md-1">
+                                <div class="logo">
+                                 <a href="index.html"><img src="{{ url_for('static', filename='assets/img/logo/WHITEEE.png')}}" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-10 col-md-8">
+                                <!-- Main-menu -->
+                                <div style="font-family:'Courier New'" style="font-size:1vw" class="main-menu f-right d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li ><a href="{{ url_for('index') }}">Home</a></li>
+                                            <li><a href="{{ url_for('about') }}">About</a></li>
+                                            <li><a href="{{ url_for('business') }}">For Businesses</a></li>
+                                            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                                            {% if current_user.is_authenticated %}
+                                            <li class="add-list"><a href="{{ url_for('logout') }}"><i class="ti"></i>Logout</a></li>
+                                             <li class="account"><a href="{{ url_for('account') }}"> <i class="ti-user"></i>  {{ current_user.username }}</a></li>
+                                            {% else %}
+                                            <li class="add-list"><a href="{{ url_for('login') }}"><i class="ti"></i> Log in</a></li>
+                                            <li class="login"><a href="{{ url_for('register') }}"> <i class="ti-user"></i>Sign up</a></li>
+                                            {% endif %}
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <!-- Mobile Menu -->
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+            <div class="col-lg-4 mt-5">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+       </header>
+        <!-- Header End -->
+        {% block content %}
+        {% endblock %}
+
+         <footer>
+        <!-- Footer Start-->
+        <div class="footer-area">
+            <div class="container">
+               <div class="footer-top footer-padding">
+                    <div class="row justify-content-between">
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <div class="single-footer-caption mb-30">
+                                    <!-- logo -->
+                                    <div class="footer-logo">
+                                        <a href="index.html"><img src="{{ url_for('static', filename='assets/img/logo/mydes1.png')}}" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="font-family:'Courier New'"  class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4 style="font-family:'Courier New'" >Quick Link</h4>
+                                    <ul>
+                                        <li><a href="#">Home</a></li>
+
+                                        <li><a href="#">About</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                            <div style="font-family:'Courier New'"  class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4 style="font-family:'Courier New'" >Categories</h4>
+                                    <ul>
+                                        <li><a href="#">cricket turf</a></li>
+                                        <li><a href="#">football turf</a></li>
+                                        <li><a href="#">badminton turf</a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="font-family:'Courier New'" class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4 style="font-family:'Courier New'" >Download App</h4>
+                                    <ul>
+                                        <li class="app-log"><a href="#"><img src="{{ url_for('static', filename='assets/img/gallery/app-logo.png')}}" alt=""></a></li>
+                                        <li><a href="#"><img src="{{ url_for('static', filename='assets/img/gallery/app-logo2.png')}}" alt=""></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+
+                            <!-- Footer Social -->
+                            <div style="font-family:'Courier New'"  class="footer-social f-right">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-globe"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+        <!-- Footer End-->
+    </footer>
+    <!-- Scroll Up -->
+    <div style="font-family:'Courier New'"  id="back-top" >
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+
+
+    <!-- JS here -->
+		<!-- All JS Custom Plugins Link Here here -->
+        <script src="{{ url_for('static', filename='./assets/js/vendor/modernizr-3.5.0.min.js')}}"></script>
+		<!-- Jquery, Popper, Bootstrap -->
+		<script src="{{ url_for('static', filename='./assets/js/vendor/jquery-1.12.4.min.js')}}"></script>
+        <script src="{{ url_for('static', filename='./assets/js/popper.min.js')}}"></script>
+        <script src="{{ url_for('static', filename='./assets/js/bootstrap.min.js')}}"></script>
+	    <!-- Jquery Mobile Menu -->
+        <script src="{{ url_for('static', filename='./assets/js/jquery.slicknav.min.js')}}"></script>
+
+		<!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="{{ url_for('static', filename='./assets/js/owl.carousel.min.js')}}"></script>
+        <script src="{{ url_for('static', filename='./assets/js/slick.min.js')}}"></script>
+		<!-- One Page, Animated-HeadLin -->
+        <script src="{{ url_for('static', filename='./assets/js/wow.min.js')}}"></script>
+		<script src="{{ url_for('static', filename='./assets/js/animated.headline.js')}}"></script>
+        <script src="{{ url_for('static', filename='./assets/js/jquery.magnific-popup.js')}}"></script>
+
+		<!-- Nice-select, sticky -->
+        <script src="{{ url_for('static', filename='./assets/js/jquery.nice-select.min.js')}}"></script>
+		<script src="{{ url_for('static', filename='./assets/js/jquery.sticky.js')}}"></script>
+
+        <!-- contact js -->
+        <script src="{{ url_for('static', filename='./assets/js/contact.js')}}"></script>
+        <script src="{{ url_for('static', filename='./assets/js/jquery.form.js')}}"></script>
+        <script src="{{ url_for('static', filename='./assets/js/jquery.validate.min.js')}}"></script>
+        <script src="{{ url_for('static', filename='./assets/js/mail-script.js')}}"></script>
+        <script src="{{ url_for('static', filename='./assets/js/jquery.ajaxchimp.min.js')}}"></script>
+
+		<!-- Jquery Plugins, main Jquery -->
+        <script src="{{ url_for('static', filename='./assets/js/plugins.js')}}"></script>
+        <script src="{{ url_for('static', filename='./assets/js/main.js')}}"></script>
+
+    </body>
+</html>

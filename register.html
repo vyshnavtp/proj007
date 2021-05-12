@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+    <main>
+
+        <!-- Hero Start-->
+        <div class="hero-area2  slider-height2 hero-overly2 d-flex align-items-center ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center pt-50">
+
+
+
+                            <head>
+                                    <style>
+                            th, td {
+                              padding: 5px;
+                            }
+                            </style>
+
+                            </head>
+                            <body>
+                            <header>
+                                <div class="bg-color">
+                                <nav class="nav navbar-default navbar-fixed-top">
+                                    <div class="container">
+                                      <div class="col-md-12">
+                                        <div class="navbar-header">
+                                        </div>
+                                           <div class="collapse navbar-collapse navbar-right" id="mynavbar">
+                                               <ul class="nav navbar-nav">
+
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                      </nav>
+                                </div>
+                            </header>
+
+                            <center>
+                            <h2 style="font-family:'Courier New'" class="head-title black">Sign up</h2>
+                                <hr class="botm-line">
+                                 <div class="col-md-4 col-sm-6" style="padding-left:0px;">
+
+
+                            <div style="font-family:'Courier New'" class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+
+                    {{ form.username.label(class="form-control-label text-white") }}
+
+                    {% if form.username.errors %}
+                        {{ form.username(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.username.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.username(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div style="font-family:'Courier New'" class="form-group">
+                    {{ form.email.label(class="form-control-label text-white pt-3") }}
+                    {% if form.email.errors %}
+                        {{ form.email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.email(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div  style="font-family:'Courier New'" class="form-group">
+                    {{ form.password.label(class="form-control-label text-white") }}
+                    {% if form.password.errors %}
+                        {{ form.password(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div style="font-family:'Courier New'" class="form-group">
+                    {{ form.confirm_password.label(class="form-control-label text-white") }}
+                    {% if form.confirm_password.errors %}
+                        {{ form.confirm_password(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.confirm_password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.confirm_password(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div style="font-family:'Courier New'" class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+    </div>
+    <div style="font-family:'Courier New'" class="border-top pt-1">
+        <small class="text-white">
+            Already Have An Account? <a class="ml-2" href="{{ url_for('login') }}">Sign In</a>
+            </small>
+        </div>
+                        </form>
+                        </center>
+                        </body>
+    </main>
+       </html>
+
+{% endblock %}

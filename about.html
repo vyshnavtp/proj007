@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <main>
+        <!-- Hero Start-->
+        <div class="hero-area2  slider-height2 hero-overly2 d-flex align-items-center ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center pt-50">
+                            <h2 style="font-family:'Courier New'">About us</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Hero End -->
+        <!-- About Details Start -->
+        <div class="about-details section-padding2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-md-10">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle section-tittle5 mb-80">
+                            <span>About our company</span>
+
+                        <h2><span>Spotic is India’s leading Sports recreational platform for Venues, academies and Individuals.
+
+We couldn’t believe there was no one-stop shop for sports players looking to find, contact and book local sports turfs. we set about researching, getting support for and then building a platform that showed all sports venues anywhere in south India, and that was free and easy for anyone to use.We know the urban work-life balance isn’t always easy to juggle and our services takes the hassle away from finding places and co- players
+
+Our mission is making it easier for everyone to play sports and increasing the utilisation of facilities as a result.
+
+Sports play a pivotal role in bringing people together, sharing moments and enhancing the well-being are reasons that form the  essence Spotic.
+
+Our Goal is making the sports simple #LetTheWorldPlay </span></h2>
+                    </div>
+                    <div class="col-lg-5">
+                              </div>
+                </div>
+            </div>
+        </div>
+        <!-- About Details End -->
+        <!-- peoples-visit Start -->
+        <div class="peoples-visit dining-padding-top">
+            <!-- Single Left img -->
+            <div class="single-visit left-img">
+                <div class="container">
+                    <div class="row justify-content-end">
+                        <div class="col-lg-8">
+                            <div class="visit-caption">
+                                <span>We are offering for you</span>
+                                <h3>Every Month, Millions of People 
+                                    visit this site We’ve Built.</h3>
+                               
+                                <!--Single Visit categories -->
+                                <div class="visit-categories mb-40">
+                                    <div class="visit-location">
+                                        <span class="flaticon-travel"></span>
+                                    </div>
+                                    <div class="visit-cap">
+                                        <h4>Great places in the world</h4>
+                                        
+                                        </p>
+                                    </div>
+                                </div>
+                                <!--Single Visit categories -->
+                                <div class="visit-categories">
+                                    <div class="visit-location">
+                                        <span class="flaticon-work"></span>
+                                    </div>
+                                    <div class="visit-cap">
+                                        <h4>Biggest category listing</h4>
+                                       
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- peoples-visit End -->
+        <!-- Testimonial Start -->
+        <div class="testimonial-area testimonial-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle text-center mb-80">
+                           
+                            
+                                    
+            </div>
+        </div>
+        <!-- Testimonial End -->
+        <!-- Services Area Start -->
+        <div class="services-area pt-150 pb-150 section-bg" data-background="{{ url_for('static', filename='assets/img/gallery/site1.gif')}}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle section-tittle2 text-center mb-80">
+                            <span>Easy to explore</span>
+                            <h2>How It Works</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-services text-center mb-50">
+                            <div class="services-icon">
+                                <span class="flaticon-list"></span>
+                            </div>
+                            <div class="services-cap">
+                                <h5><a href="#">1. Choose a Category & location</a></h5>
+                                <p>“I don’t count my situps. I only start counting once it starts hurting. ”</p>
+                            </div>
+                            <!-- Shpape -->
+                            <img class="shape1 d-none d-lg-block" src="{{ url_for('static', filename='assets/img/icon/serices1.png')}}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-services text-center mb-50">
+                            <div class="services-icon">
+                                <span class="flaticon-problem"></span>
+                            </div>
+                            <div class="services-cap">
+                                <h5><a href="#">2. Search and Book </a></h5>
+                                <p>“I’ve failed over and over again in my life. And that is why I succeed.” – Michael Jordan</p>
+                            </div>
+                            <img class="shape2 d-none d-lg-block" src="{{ url_for('static', filename='assets/img/icon/serices2.png')}}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-services text-center mb-50">
+                            <div class="services-icon">
+                                <span class="flaticon-respect"></span>
+                            </div>
+                            <div class="services-cap">
+                                <h5><a href="#">3. Go out & Explore</a></h5>
+                                <p>“The only way to prove you are a good sport is to lose.” – Ernie Banks</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Services Area End -->
+        
+    </main>
+
+ {% endblock %}

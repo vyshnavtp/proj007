@@ -1,0 +1,109 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+
+    </header>
+    <main>
+
+        <!-- Hero Start-->
+        <div class="hero-area2  slider-height2 hero-overly2 d-flex align-items-center ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center pt-5">
+                            <h2 style="font-family:'Courier New'">Booking info</h2>
+                            <body>
+
+                             <div class="border-top pt-30">
+
+  <div class=" section-padding-10">
+
+</div>
+
+	<div class="limiter">
+
+			<div class="wrap-table100">
+				<div class="table100">
+					<table>
+						<thead>
+							<tr class="table100-head" >
+								<th style="font-family:'Courier New'" class="column1">Date</th>
+								<th style="font-family:'Courier New'" class="column2">Time</th>
+								<th style="font-family:'Courier New'" class="column1">Turf Name</th>
+								<th style="font-family:'Courier New'" class="column4">Category</th>
+								<th style="font-family:'Courier New'" class="column6">Players</th>
+								<th style="font-family:'Courier New'" class="column6">Location</th>
+                                <th  class="column6"></th>
+							</tr>
+						</thead>
+						<tbody style="font-family:'Courier New'">
+						{% for booking in booking %}
+								<tr style="font-family:'Courier New'" >
+									<td class="column1">{{booking.date}}</td>
+									<td class="column2">{{booking.time}} to {{booking.time1}}</td>
+									<td class="column1">{{booking.companyname}}</td>
+									<td class="column4">{{booking.category}}</td>
+									<td class="column6">{{booking.players}}</td>
+									<td class="column6">{{booking.location}}</td>
+									<td class="column6">
+										<form action="{{ url_for('delete_book', book_id=booking.id) }}" method="post">
+											<input type="submit" value="Cancel" style="border:none; color:#ff3d1c; background:none;">
+										</form>
+									</td>
+
+								</tr>
+							{% endfor %}
+
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='table/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='table/vendor/bootstrap/js/popper.js')}}"></script>
+	<script src="{{ url_for('static', filename='table/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='table/vendor/select2/select2.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='table/js/main.js')}}"></script>
+
+</body>
+</html>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Hero End -->
+        <!-- ================ contact section start ================= -->
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='table/images/icons/favicon.ico')}}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='table/vendor/bootstrap/css/bootstrap.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='table/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='table/vendor/animate/animate.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='table/vendor/select2/select2.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='table/vendor/perfect-scrollbar/perfect-scrollbar.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='table/css/util.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='table/css/main.css')}}">
+<!--===============================================================================================-->
+
+
+ {% endblock %}
